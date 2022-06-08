@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import java.util.stream.Stream;
 import java_cup.runtime.Scanner;
 import javax.crypto.AEADBadTagException;
@@ -244,6 +245,11 @@ public class Interfaz extends javax.swing.JFrame {
         jMenu4.add(jMenuItem4);
 
         jMenuItem5.setText("Manual Tecnico");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem5);
 
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/acerca-de.png"))); // NOI18N
@@ -395,7 +401,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        String url = "https://drive.google.com/file/d/1AaWicvM5jBn9pUo2GOs4CZMYoPC8HtPJ/view?usp=sharing" + jListSintactico.getSelectedValue() + "-sintacticos.html";
+        String url = "https://drive.google.com/file/d/1AaWicvM5jBn9pUo2GOs4CZMYoPC8HtPJ/view?usp=sharing";
         String osName = System.getProperty("os.name");
         try {
             if (osName.startsWith("Windows")) {
@@ -479,6 +485,17 @@ public class Interfaz extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+                String url = "https://drive.google.com/file/d/1BZSwnqC8BDP-XgxrAq7XNCtqyXPLb_p5/view?usp=sharing";
+        String osName = System.getProperty("os.name");
+        try {
+            if (osName.startsWith("Windows")) {
+                Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -556,6 +573,18 @@ public class Interfaz extends javax.swing.JFrame {
         }
         if (!entrada.exists()) {
             entrada.mkdirs();
+        String  sourcePath = "src\\data\\archivoDeEntrada.txt";   // source file path
+        String destinationPath="C:\\memory\\Entrada\\";  // destination file path
+        File sourceFile = new File(sourcePath);        // Creating A Source File
+        File destinationFile = new File(destinationPath+sourceFile.getName());   //Creating A Destination File. Name stays the same this way, referring to getName()
+        try 
+        {
+        Files.copy(sourceFile.toPath(), destinationFile.toPath(),REPLACE_EXISTING);  
+          // Static Methods To Copy Copy source path to destination path
+        } catch(Exception e)
+        {
+             System.out.println(e);  // printing in case of error.
+        }
         }
         if (!salida.exists()) {
             salida.mkdirs();

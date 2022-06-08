@@ -1,0 +1,40 @@
+$
+<tabla          
+   <etiquetaTabla Pasajeros del vuelo 377 G&T >etiquetaTabla
+   <fila 
+       <celdaEncabezado Nombre del pasajero >celdaEncabezado
+       <celdaEncabezado Edad >celdaEncabezado
+       <celdaEncabezado Nacionalidad >celdaEncabezado
+	   <celdaEncabezado Sexo >celdaEncabezado
+   >fila
+    <fila 
+       <celdaEncabezado Nombre del pasajero >celdaEncabezado
+       <celdaEncabezado Edad >celdaEncabezado
+       <celdaEncabezado Nacionalidad >celdaEncabezado
+	   <celdaEncabezado Sexo >celdaEncabezado
+   >fila
+    <fila 
+       <celda Carmen >celda
+       <celda 33 >celda
+       <celda Guatemala >celda
+	   <celda F >celda
+   >fila
+   <fila
+       <celda Mario >celda
+       <celda 26 >celda
+       <celda El Salvador >celda
+	   <celda M >celda
+   >fila
+   <fila
+       <celda Julio >celda
+       <celda 28 >celda
+       <celda El Salvador >celda
+	   <celda M >celda
+   >fila
+   <fila
+       <celda Karla >celda
+       <celda 18 >celda
+       <celda Guatemala >celda
+	   <celda F >celda
+   >fila
+>tabla
